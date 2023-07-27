@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: "https://main--machakath.netlify.app",
+    origin: "https://machakath.netlify.app",
   })
 );
 app.use(cookieParser());
