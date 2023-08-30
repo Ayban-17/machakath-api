@@ -10,7 +10,14 @@ const loginUser = async (req, res) => {
       const token = await jwt.sign({ name, userId: _id }, process.env.SECRET, {
         expiresIn: "1d",
       });
-      res.cookie("token", token).json({ name });
+      res
+        .cookie("token", token, {
+          httpOnly: true,
+          maxAge: 3600000 * 5,
+          secure: true,
+          sameSite: "none",
+        })
+        .json({ name });
     } catch (error) {
       res.status(400).json({ error: error.message });
     }
