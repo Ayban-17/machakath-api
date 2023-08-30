@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: "https://machakath.netlify.app",
+    origin: "https://mck-expense-tracker.netlify.app",
   })
 );
 app.use(cookieParser());
